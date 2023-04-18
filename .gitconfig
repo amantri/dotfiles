@@ -1,11 +1,26 @@
 [user]
-	name = amantri
-	email = anup.mantri@gmail.com
+    name = amantri
+    email = anup.mantri@gmail.com
 [pull]
-	rebase = true
+    rebase = true
 [alias]
-	meld2 = !/Applications/Meld.app/Contents/MacOS/Meld
-	meld = !meld
-	tree = log --graph --oneline --decorate
-        plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    co = checkout
+    meld = difftool
+
+    start = !git checkout main && git pull origin main && git checkout -b
+    start2 = "!f () { git checkout main && git pull origin main && git checkout -b $1; }; f"
+    logp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+# From https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+    tool = meld
+[mergetool "meld"]
+    # Choose one of these 2 lines (not both!) explained below.
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
