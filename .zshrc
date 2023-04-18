@@ -65,9 +65,9 @@ setopt INC_APPEND_HISTORY  # write to hist file immediately rather than waiting 
 # fzf: https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Add GOPATH/bin to PATH
+# Add more directories to PATH
 export GOPATH=$(go env GOPATH)
-PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/opt/homebrew/opt/postgresql@15/bin
 
 # Key bindings
 bindkey '\e[H'    beginning-of-line  # Home key
