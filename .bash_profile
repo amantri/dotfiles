@@ -19,3 +19,5 @@ unset USERNAME
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 export PATH
+
+complete -C /opt/homebrew/bin/terraform terraform
