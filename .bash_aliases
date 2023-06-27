@@ -9,4 +9,3 @@ alias egrep='egrep --color'
 alias hgrep='history | grep'
 
 alias python='python3'
-# alias meld='/Applications/Meld.app/Contents/MacOS/Meld'

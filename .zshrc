@@ -64,6 +64,7 @@ export HISTSIZE=1000000
 export SAVEHIST=1000000
 export HISTFILE=~/.zsh_history
 setopt INC_APPEND_HISTORY  # write to hist file immediately rather than waiting for shell to exit
+setopt HIST_IGNORE_DUPS    # Do not enter command lines into the history list if they are duplicates of the previous event.
 
 # fzf: https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

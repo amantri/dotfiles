@@ -9,8 +9,15 @@
 
     start = !git checkout main && git pull origin main && git checkout -b
     start2 = "!f () { git checkout main && git pull origin main && git checkout -b $1; }; f"
-    logp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
+    # Show the "pretty" log for the current branch. Add --all to see it for all branches
+    # Documentation: https://git-scm.com/docs/pretty-formats
+    logp = log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+    # List names of files that have changed
+    ls = diff --name-only
+
+# Configure meld as a diff and merge tool.
 # From https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool
 [diff]
     tool = meld
@@ -21,6 +28,6 @@
 [merge]
     tool = meld
 [mergetool "meld"]
-    # Choose one of these 2 lines (not both!) explained below.
+    # Choose one of these 2 lines (not both!). MERGED=partially merged file, BASE=shared commit ancestor
     cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
     # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
