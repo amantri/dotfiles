@@ -38,10 +38,14 @@ source_if_accessible /Library/Developer/CommandLineTools/usr/share/git-core/git-
 setopt PROMPT_SUBST; PROMPT='%B%F{blue}%~%f%b$(__git_ps1 " (%s)") %# '
 
 # Autocompletions
-autoload -Uz compinit && compinit
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+  autoload -Uz compinit
+  compinit
+fi
 
 # For tab completions, show unambiguous prefix and the menu immediately after the first tab. The
 # default behavior of zsh is to show the menu on the second tab.
