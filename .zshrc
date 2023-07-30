@@ -1,3 +1,10 @@
+# For profiling zsh startup times, set _profile_zshrc=true
+_profile_zshrc=false
+if $_profile_zshrc
+then
+  zmodload zsh/zprof
+fi
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -80,3 +87,13 @@ bindkey '\e[F'    end-of-line        # End key
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+if $_profile_zshrc
+then
+  zprof
+fi
+
+# Clean up the local vars and functions
+unset _profile_zshrc
+unfunction source_if_accessible sub_symlink
