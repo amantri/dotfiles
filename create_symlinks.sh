@@ -1,10 +1,11 @@
 #!/bin/zsh
 
-# WARNING - run this only once. Rerunning this might replace your files with symlinks
+# WARNING - run this only once. Rerunning this might replace your files with symlinks,
+# though you can recover from the git history.
 
-
-SOURCE="/Users/amantri"
-DEST="/Users/amantri/gDrive/code/dotfiles_mac"
+# Assuming that the script is being from the `dotfiles` directory.
+SOURCE=$HOME
+DEST=$PWD
 
 for file in .bash_aliases .bash_profile .bashrc .fzf.bash .fzf.zsh .gitconfig .tmux.conf .vimrc .zprofile .zshrc
 do
@@ -13,3 +14,5 @@ do
   ln -nfs $DEST/$file  $SOURCE/$file
 done
 
+echo To import gh aliases, run:
+echo $ gh alias import gh_aliases.yaml
