@@ -16,3 +16,6 @@ done
 
 echo To import gh aliases, run:
 echo $ gh alias import gh_aliases.yaml
+echo
+echo On Macs: to set the correct key bindings for Home, End, etc.:
+echo $ ln -nfs $PWD/DefaultKeyBinding.dict ~/Library/KeyBindings/
