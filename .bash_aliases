@@ -17,8 +17,12 @@ alias python='ipython'
 
 # less the most recent file matching $1
 # Usage: lessmr Ticket*
-lessmr() { ls -t $@ | head -1 | xargs less -NS; }
+lessmr() { ls -t $@ | head -1 | xargs less -imNS; }
 
-# Tail most recent file
+# cat the most recent file matching $1
+# Usage: catmr Ticket*
+catmr() { ls -t $@ | head -1 | xargs cat -n; }
+
+# tail -f most recent file matching $1
 # Usage: tailmr Ticket*
 tailmr() { ls -t $@ | head -1 | xargs tail -f; }

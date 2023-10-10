@@ -7,6 +7,7 @@
 
 [alias]
     # Convenience shortcuts
+    s = status
     co = checkout
     br = branch
 
@@ -23,6 +24,7 @@
     # Usage: git logp [--all]
     # Documentation: https://git-scm.com/docs/pretty-formats
     logp = log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l = logp
 
     # List names of files that have changed
     # Sample usage:
