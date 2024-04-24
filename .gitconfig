@@ -36,6 +36,7 @@
 # From https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool
 [diff]
     tool = meld
+    submodule = diff
 [difftool]
     prompt = false
 [difftool "meld"]
@@ -46,3 +47,6 @@
     # Choose one of these 2 lines (not both!). MERGED=partially merged file, BASE=shared commit ancestor
     cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
     # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[init]
+	defaultBranch = main
+

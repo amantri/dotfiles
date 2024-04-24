@@ -110,8 +110,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# TODO: remove this from here
-conda activate morphai
 
 #############
 
@@ -123,3 +121,4 @@ fi
 # Clean up the local vars and functions
 unset _profile_zshrc
 unfunction source_if_accessible sub_symlink
+
