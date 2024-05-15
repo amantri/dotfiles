@@ -10,6 +10,7 @@
     s = status
     co = checkout
     br = branch
+    sw = switch
 
     # Sample usage:
     #   git meld [-d] [<commit>]
