@@ -26,3 +26,7 @@ catmr() { ls -t $@ | head -1 | xargs cat -n; }
 # tail -f most recent file matching $1
 # Usage: tailmr Ticket*
 tailmr() { ls -t $@ | head -1 | xargs tail -f; }
+
+# cd most recent dir matching $1
+# Usage: cdmr *
+cdmr() { cd $(ls -td ${@:-*} | head -1); }
