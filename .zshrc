@@ -82,7 +82,7 @@ setopt HIST_IGNORE_DUPS    # Do not enter command lines into the history list if
 
 # Add more directories to PATH
 export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$GOPATH/bin:/opt/homebrew/opt/postgresql@15/bin
+export PATH=$PATH:$GOPATH/bin:/opt/homebrew/opt/postgresql@15/bin:$HOME/.local/bin
 
 # Key bindings
 bindkey '\e[H'    beginning-of-line  # Home key
