@@ -7,7 +7,7 @@
 SOURCE=$HOME
 DEST=$PWD
 
-for file in .bash_aliases .bash_profile .bashrc .fzf.bash .fzf.zsh .gitconfig .tmux.conf .vimrc .zprofile .zshrc
+for file in .bash_aliases .bash_profile .bashrc .condarc .fzf.bash .fzf.zsh .gitconfig .tmux.conf .vimrc .zprofile .zshrc
 do
   echo; echo $file
   mv $SOURCE/$file $DEST/$file
