@@ -8,7 +8,7 @@ alias grep='grep --color'
 alias egrep='egrep --color'
 alias hgrep='history | grep'
 
-alias python='ipython'
+alias pythoni='ipython'
 
 
 #######################
