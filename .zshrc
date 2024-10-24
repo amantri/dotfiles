@@ -122,3 +122,5 @@ fi
 unset _profile_zshrc
 unfunction source_if_accessible sub_symlink
 
+
+. "$HOME/.cargo/env"
